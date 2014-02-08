@@ -7,7 +7,7 @@ require 'pry'
 module CapybaraStandalone
   def self.setup
     Capybara.configure do |config|
-      config.app_host       = ENV['CAPYBARA_TEST_URL'] || 'http://localhost:3000'
+      config.app_host       = ENV['TEST_URL'] || 'http://localhost:3000'
       config.run_server     = false
       config.default_driver = :selenium
     end
