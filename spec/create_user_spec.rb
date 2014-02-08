@@ -37,7 +37,7 @@ describe 'Creating a user' do
 
   before 'allows for deletion of a user' do
     visit '/'
-    find(:xpath, "//td[contains(.//a/text(), '#{full_name}')]").parent().find('.delete').click()
+    find(:xpath, "//td[contains(.//a/text(), '#{full_name}')]/..").find('.delete').click()
     expect(page).to have_content("Successfully deleted user with name #{full_name}")
   end
 
