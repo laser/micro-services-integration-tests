@@ -1,12 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe 'Creating a user' do
-  before(:all) do
-    uri = URI("#{Capybara.app_host}/users/reset")
-    res = Net::HTTP.post_form(uri, {})
-    expect(res.code).to_not eq("500")
-  end
-
   let(:timestamp) { Time.now.to_i.to_s }
   let(:full_name) { "Erin (#{timestamp})" }
 
